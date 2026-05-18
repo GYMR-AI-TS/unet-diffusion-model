@@ -17,7 +17,7 @@ This project includes an automated CI pipeline that runs on every push and pull 
 The CI pipeline automatically:
 
 - **Lints code** with [Ruff](https://github.com/astral-sh/ruff) to catch style and logical errors
-- **Checks formatting** with [Black](https://github.com/psf/black) to ensure consistent code style
+- **Checks formatting** with [Ruff](https://github.com/astral-sh/ruff) to ensure consistent code style
 - **Runs tests** with [pytest](https://pytest.org/) to verify functionality
 - **Measures coverage** with pytest-cov to track test coverage
 
@@ -37,7 +37,7 @@ Before pushing, make sure your code passes local checks:
 
 ```bash
 # Format code with Black
-black .
+ruff format .
 
 # Lint with Ruff
 ruff check . --fix
