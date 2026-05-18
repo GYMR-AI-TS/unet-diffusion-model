@@ -5,7 +5,6 @@ description = "Building a diffusion model using UNet"
 readme = "README.md"
 requires-python = ">=3.14"
 dependencies = [
-    "black>=26.3.1",
     "matplotlib>=3.10.8",
     "numpy>=2.4.4",
     "ruff>=0.15.10",
