@@ -33,7 +33,7 @@ jobs:
 
       - name: Format check with Black
         run: |
-          black --check .
+          ruff format --check .
 
       - name: Run tests
         run: |
