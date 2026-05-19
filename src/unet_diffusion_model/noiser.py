@@ -1,3 +1,4 @@
+import torch
 import numpy as np
 from math import prod
 
@@ -22,8 +23,9 @@ def cosine_noise_schedule(T: int, s: float = 0.008):
     return betas, alpha_bars
 
 
-def q_sample(image, timestep, alpha_bars):
-    epsilon = np.random.standard_normal()
+def q_sample(image: torch.Tensor, timestep: int, alpha_bars: list[float]):
+    # Each pixel gets its own independent noise sample :
+    epsilon = torch.randn_like(image)
     alpha_bar = alpha_bars[timestep]
-    noised_image = np.sqrt(alpha_bar) * image + (1 - np.sqrt(alpha_bar)) * epsilon
-    return noised_image
+    noised_image = np.sqrt(alpha_bar) * image + np.sqrt(1 - alpha_bar) * epsilon
+    return noised_image, epsilon
