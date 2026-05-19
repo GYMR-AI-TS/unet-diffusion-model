@@ -20,3 +20,10 @@ def cosine_noise_schedule(T: int, s: float = 0.008):
     # Prevent beta from being >0.999 near t=T
     betas = [min(1 - a, 0.999) for a in alphas]
     return betas, alpha_bars
+
+
+def q_sample(image, timestep, alpha_bars):
+    epsilon = np.random.standard_normal()
+    alpha_bar = alpha_bars[timestep]
+    noised_image = np.sqrt(alpha_bar) * image + (1 - np.sqrt(alpha_bar)) * epsilon
+    return noised_image
