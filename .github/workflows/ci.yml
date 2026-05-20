@@ -31,7 +31,7 @@ jobs:
         run: |
           ruff check .
 
-      - name: Format check with Black
+      - name: Format check Ruff format
         run: |
           ruff format --check .
 
