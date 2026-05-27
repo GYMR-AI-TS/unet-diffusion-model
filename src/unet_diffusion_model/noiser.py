@@ -1,3 +1,6 @@
+### noiser.py
+### Implements functions to add random noise to an image
+
 import torch
 import numpy as np
 from math import prod
