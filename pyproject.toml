@@ -1,3 +1,7 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
 [project]
 name = "unet-diffusion-model"
 version = "0.1.0"
@@ -5,11 +9,19 @@ description = "Building a diffusion model using UNet"
 readme = "README.md"
 requires-python = ">=3.14"
 dependencies = [
-    "black>=26.3.1",
-    "matplotlib>=3.10.8",
-    "numpy>=2.4.4",
-    "ruff>=0.15.10",
-    "torch>=2.11.0",
-    "torchvision>=0.26.0",
-    "tqdm>=4.67.3",
+    "matplotlib",
+    "numpy",
+    "pillow",
+    "torch",
+    "torchvision",
+    "tqdm",
 ]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "ruff"
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
