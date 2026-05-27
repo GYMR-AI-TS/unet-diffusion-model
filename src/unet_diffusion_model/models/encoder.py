@@ -1,5 +1,5 @@
 ### encoder.py
-###
+### Implements the UNet Encoder
 
 
 import torch.nn as nn
