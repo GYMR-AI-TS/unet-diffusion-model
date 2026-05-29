@@ -41,7 +41,7 @@ def test_unet():
     model = UNet()
     tensor = torch.randn(64, 3, 32, 32)
     output = model(tensor)
-    assert output.shape == torch.Size([64, 2, 32, 32])
+    assert output.shape == torch.Size([64, 1, 32, 32])
 
     loss = output.sum()
     loss.backward()
